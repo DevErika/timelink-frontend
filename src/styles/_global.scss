@@ -1,0 +1,56 @@
+//estilos generales (body, h1, botones).
+@use 'sass:color';
+@use './variables' as variables;
+@use './mixins' as mixins;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: variables.$color-background;
+  color: variables.$color-dark;
+  font-family: variables.$font-body;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: variables.$font-heading;
+  color: variables.$color-dark;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: variables.$font-body;
+  border-radius: variables.$radius-base;
+  transition: 0.3s ease;
+}
+
+// Botón principal
+.btn-primary {
+  background-color: variables.$color-olive;
+  color: variables.$color-white;
+  padding: 12px 24px;
+  font-size: variables.$font-small;
+  @include mixins.soft-shadow;
+
+  &:hover {
+    background-color: color.adjust(variables.$color-olive, $lightness: -10%);
+  }
+}
+
+// Botón secundario
+.btn-secondary {
+  background-color: variables.$color-rose;
+  color: variables.$color-dark;
+  padding: 12px 24px;
+  font-size: variables.$font-small;
+  @include mixins.soft-shadow;
+
+  &:hover {
+    background-color: color.adjust(variables.$color-rose, $lightness: -10%);
+  }
+}

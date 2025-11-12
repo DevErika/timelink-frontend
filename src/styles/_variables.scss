@@ -1,0 +1,33 @@
+//colores, tipografía, tamaños.
+// ========================================
+// 🎨 TIME LINK COLOR PALETTE
+// ========================================
+$color-olive: #488165;     // Verde oliva principal (botones, acentos)
+$color-rose: #F7B9B5;      // Rosa pálido (secundario)
+$color-mint: #E4F1DB;      // Verde menta claro (fondos de tarjetas)
+$color-dark: #3F4542;      // Gris oscuro (texto)
+$color-background: #FFF0DB; // Fondo general del sitio
+$color-peach: #FCE4C4;     // Melocotón suave (hover, detalles)
+$color-white: #FBF9F6;     // Blanco cálido (contraste)
+
+// ========================================
+// ✍️ TYPOGRAPHY
+// ========================================
+$font-heading: 'Poppins', sans-serif;
+$font-subtitle: 'Barlow', sans-serif;
+$font-body: 'Nunito Sans', sans-serif;
+
+// FONT SIZES
+$font-hero: 3rem;        // 48px
+$font-h1: 2.25rem;       // 36px
+$font-h2: 1.75rem;       // 28px
+$font-body-size: 1.125rem; // 18px
+$font-small: 1rem;       // 16px
+$font-detail: 0.875rem;  // 14px
+
+// ========================================
+// 🧱 SHADOWS & RADIUS
+// ========================================
+$shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.08);
+$radius-base: 8px;
+$radius-round: 50%;
