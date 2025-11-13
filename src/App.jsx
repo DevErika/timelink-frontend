@@ -1,18 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import TimeLinkLogo from '../public/TimeLinkLogo'
+
+import AppRouter from "./routes/AppRouter.jsx";
 //import './App.css'
 
 function App() {
-  return (
-    <div>
-      <h1>Bienvenida a TimeLink</h1>
-      <p>Conecta tu tiempo con la comunidad</p>
-      <button className="btn-primary">Empezar</button>
-      <button className="btn-secondary">Más información</button>
-    </div>
-  );
-}
 
-export default App;
+    return <AppRouter />;
 
+};
+  
+  export default App;
