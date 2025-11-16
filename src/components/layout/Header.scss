@@ -61,4 +61,10 @@
       color: $color-dark;
     }
   }
+  @media (max-width: 768px) {
+  .header {
+    box-shadow: none;
+  }
+}
+
 }

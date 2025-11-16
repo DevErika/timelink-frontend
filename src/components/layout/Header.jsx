@@ -7,8 +7,7 @@ export default function Header() {
         <header className="header">
             <div className="header-brand">
             <img src={logo} alt="TimeLink logo" className="header-logo" />
-            {/*h1 className="header__title">TimeLink</h1> */}
-            </div> 
+             </div> 
 
             <nav className="header-nav">
                 <ul className="header-list">
