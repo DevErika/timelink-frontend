@@ -1,0 +1,65 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as mixins;
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: $color-background;
+  border-radius: $radius-base;
+  box-shadow: $shadow-soft;
+  margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+  }
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-title {
+  font-family: $font-heading;
+  font-size: $font-h1;
+  color: $color-dark;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-family: $font-body;
+  font-size: $font-body-size;
+  color: $color-dark;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.hero-btn {
+  display: inline-block;
+  text-align: center;
+  width: fit-content;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  max-width: 420px;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: $radius-base;
+  object-fit: cover;
+  @include mixins.soft-shadow;
+}

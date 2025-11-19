@@ -1,0 +1,37 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
+
+.toast {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  padding: 1rem 1.5rem;
+  border-radius: $radius-base;
+
+  font-size: $font-small;
+  font-family: $font-body;
+
+  color: $color-white;
+  @include soft-shadow;
+
+  opacity: 0;
+  transform: translateY(-15px);
+  animation: slideFade 0.4s forwards ease-out;
+
+  &--success {
+    background-color: $color-olive;
+  }
+
+  &--error {
+    background-color: $color-rose;
+    color: $color-dark;
+  }
+}
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

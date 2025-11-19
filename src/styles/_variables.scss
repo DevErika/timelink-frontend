@@ -1,14 +1,14 @@
-//colores, tipografía, tamaños.
 // ========================================
 // 🎨 TIME LINK COLOR PALETTE
 // ========================================
-$color-olive: #488165;     // Verde oliva principal (botones, acentos)
-$color-rose: #F7B9B5;      // Rosa pálido (secundario)
-$color-mint: #E4F1DB;      // Verde menta claro (fondos de tarjetas)
-$color-dark: #3F4542;      // Gris oscuro (texto)
-$color-background: #FFF0DB; // Fondo general del sitio
-$color-peach: #FCE4C4;     // Melocotón suave (hover, detalles)
-$color-white: #FBF9F6;     // Blanco cálido (contraste)
+$color-olive: #488165;       // Primary Accent
+$color-rose: #F7B9B5;        // Secondary Accent
+$color-mint: #E4F1DB;        // Soft Card Background
+$color-dark: #3F4542;        // Text Color
+$color-background: #FFF0DB; // Main Background
+$color-peach: #FCE4C4;       // Soft Accent / Hover
+$color-white: #FBF9F6;       // Warm White
+
 
 // ========================================
 // ✍️ TYPOGRAPHY
@@ -17,13 +17,23 @@ $font-heading: 'Poppins', sans-serif;
 $font-subtitle: 'Barlow', sans-serif;
 $font-body: 'Nunito Sans', sans-serif;
 
-// FONT SIZES
+
+// ========================================
+// ✍️ FONT SIZES
+// ========================================
 $font-hero: 3rem;        // 48px
 $font-h1: 2.25rem;       // 36px
-$font-h2: 1.75rem;       // 28px
+$font-h2: 2rem;          // 32px
+
+$font-large: 1.25rem;    // 20px
 $font-body-size: 1.125rem; // 18px
 $font-small: 1rem;       // 16px
 $font-detail: 0.875rem;  // 14px
+$font-xs: 0.75rem;       // 12px
+
+// para evitar errores Sass:
+$font-medium: $font-small; // alias útil // 16px
+
 
 // ========================================
 // 🧱 SHADOWS & RADIUS

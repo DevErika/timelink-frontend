@@ -1,0 +1,33 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as mixins;
+
+.final-cta {
+  padding: 3rem 2rem;
+  background-color: $color-olive;
+  color: $color-white;
+  border-radius: $radius-base;
+  box-shadow: $shadow-soft;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.final-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.final-cta-title {
+  font-family: $font-heading;
+  font-size: $font-h2;
+  margin-bottom: 1rem;
+}
+
+.final-cta-text {
+  font-family: $font-body;
+  font-size: $font-body-size;
+  margin-bottom: 2rem;
+}
+
+.final-cta-btn {
+  font-size: $font-small;
+}
