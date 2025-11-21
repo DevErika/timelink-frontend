@@ -11,7 +11,7 @@ export default function FinalCTA() {
           support your neighbors.
         </p>
 
-        <a href="/register" className="btn-primary final-cta-btn">
+        <a href="/register" className="final-cta-btn">
           Join TimeLink Today
         </a>
       </div>

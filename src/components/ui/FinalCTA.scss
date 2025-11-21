@@ -1,33 +1,59 @@
-@use "/src/styles/variables" as *;
-@use "/src/styles/mixins" as mixins;
+@use "../../styles/variables" as v;
 
 .final-cta {
-  padding: 3rem 2rem;
-  background-color: $color-olive;
-  color: $color-white;
-  border-radius: $radius-base;
-  box-shadow: $shadow-soft;
-  margin-bottom: 3rem;
-  text-align: center;
+  background-color: v.$color-background;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .final-cta-content {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+  background-color: v.$color-olive;
+  padding: 3rem 2rem;
+  border-radius: v.$radius-base;
+  box-shadow: v.$shadow-soft;
 }
 
 .final-cta-title {
-  font-family: $font-heading;
-  font-size: $font-h2;
-  margin-bottom: 1rem;
+  font-family: v.$font-heading;
+  font-size: v.$font-h2;
+  color: v.$color-dark;
+  margin-bottom: 1.25rem;
 }
 
 .final-cta-text {
-  font-family: $font-body;
-  font-size: $font-body-size;
+  font-family: v.$font-body;
+  font-size: v.$font-body-size;
+  color: v.$color-dark;
   margin-bottom: 2rem;
 }
 
 .final-cta-btn {
-  font-size: $font-small;
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background-color: v.$color-mint;
+  color: v.$color-dark;
+  font-family: v.$font-heading;
+  font-size: v.$font-body-size;
+  font-weight: 600;
+
+  border-radius: v.$radius-base;
+  box-shadow: v.$shadow-soft;
+
+  transition: all 0.25s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(228, 241, 219, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }

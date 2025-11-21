@@ -1,27 +1,45 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api";
+// LOGIN
+export async function loginUser(payload) {
+  try {
+    const response = await fetch("http://localhost:8080/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
-async function handleResponse(response) {
-  if (!response.ok) {
-    let message = "Request failed";
+    if (!response.ok) {
+      // obtener texto sin intentar parsear JSON
+      const error = await response.text();
+      throw new Error(error);
+    }
 
-    try {
-      const errorData = await response.json();
-      if (errorData.message) message = errorData.message;
-    } catch {}
+    // aquí SÍ es seguro parsear JSON
+    return await response.json();
 
-    throw new Error(message);
+  } catch (error) {
+    console.error("Login error:", error.message);
+    throw error;
   }
-
-  if (response.status === 204) return null;
-  return response.json();
 }
 
+// REGISTER
 export async function registerUser(payload) {
-  const response = await fetch(`${API_BASE_URL}/users`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+  try {
+    const response = await fetch("http://localhost:8080/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
-  return handleResponse(response);
+    if (!response.ok) {
+      const errorMessage = await response.text();
+      throw new Error(errorMessage || "Registration failed");
+    }
+
+    return await response.json();
+
+  } catch (error) {
+    console.error("Register error:", error.message);
+    throw error;
+  }
 }

@@ -20,11 +20,6 @@ export default function Register() {
   });
 
   const [loading, setLoading] = useState(false);
-
-  // 🔴 Eliminamos error y successMessage del estado
-  // const [error, setError] = useState("");
-  // const [successMessage, setSuccessMessage] = useState("");
-
   function handleChange(e) {
     const { name, value } = e.target;
 
@@ -36,14 +31,11 @@ export default function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    // Validación local antes del fetch
     if (formData.password !== formData.confirmPassword) {
       showToast("Passwords do not match.", "error");
       return;
     }
 
-    // Payload EXACTO que espera el backend
     const payload = {
       name: formData.name,
       email: formData.email,
@@ -59,16 +51,13 @@ export default function Register() {
       const result = await registerUser(payload);
       console.log("User registered:", result);
 
-      // 🟢 MOSTRAR TOAST DE ÉXITO
       showToast("Account created successfully!", "success");
 
-      // Redirigir después de 2 segundos
       setTimeout(() => navigate("/login"), 2000);
 
     } catch (err) {
       console.error(err);
 
-      // 🔴 MOSTRAR TOAST DE ERROR
       showToast(err.message || "Error registering user.", "error");
 
     } finally {
@@ -82,8 +71,6 @@ export default function Register() {
         <h1 className="register-title">Create your TimeLink account</h1>
 
         <form className="register-form" onSubmit={handleSubmit}>
-
-          {/* NAME */}
           <div className="register-field">
             <label htmlFor="name">Full Name *</label>
             <input
@@ -96,7 +83,6 @@ export default function Register() {
             />
           </div>
 
-          {/* EMAIL */}
           <div className="register-field">
             <label htmlFor="email">Email *</label>
             <input
@@ -109,7 +95,6 @@ export default function Register() {
             />
           </div>
 
-          {/* PASSWORD */}
           <div className="register-field">
             <label htmlFor="password">Password *</label>
             <input
@@ -122,7 +107,6 @@ export default function Register() {
             />
           </div>
 
-          {/* CONFIRM PASSWORD */}
           <div className="register-field">
             <label htmlFor="confirmPassword">Confirm Password *</label>
             <input
@@ -135,7 +119,6 @@ export default function Register() {
             />
           </div>
 
-          {/* OPTIONAL FIELDS */}
           <div className="register-field">
             <label htmlFor="address">Address (optional)</label>
             <input
@@ -168,10 +151,6 @@ export default function Register() {
               onChange={handleChange}
             ></textarea>
           </div>
-
-          {/* 🟢 Eliminado mensaje de error / success */}
-          {/* {error && <p className="register-error">{error}</p>} */}
-          {/* {successMessage && <p className="register-success">{successMessage}</p>} */}
 
           <button
             type="submit"

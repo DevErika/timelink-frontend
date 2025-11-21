@@ -3,28 +3,24 @@ import heroImage from "../../assets/images/home-community2.png";
 
 export default function HeroSection() {
   return (
-    <section className="hero">
-      {/* Columna izquierda */}
+    <section className="hero-section">
       <div className="hero-content">
-        <h1 className="hero-title">Exchange Time. Build Community.</h1>
+        <div className="hero-text">
+          <h1>Exchange Time. Build Community.</h1>
+          <p>
+            Trade skills, share support, and strengthen neighborhood
+            connections through meaningful exchanges.
+          </p>
 
-        <p className="hero-subtitle">
-          Trade skills, share support, and strengthen neighborhood connections through meaningful exchanges.
-        </p>
-
-        <div className="hero-buttons">
-          <a href="/register" className="btn-primary hero-btn">Get Started</a>
-          <a href="/login" className="btn-secondary hero-btn">Sign In</a>
+          <div className="hero-buttons">
+            <a href="/register" className="btn-primary">Get Started</a>
+            <a href="/login" className="btn-secondary">Sign In</a>
+          </div>
         </div>
-      </div>
 
-      {/* Columna derecha */}
-      <div className="hero-image-wrapper">
-        <img
-          src={heroImage}
-          alt="Neighbors exchanging help at a local market"
-          className="hero-image"
-        />
+        <div className="hero-image-wrapper">
+          <img src={heroImage} alt="Community" />
+        </div>
       </div>
     </section>
   );

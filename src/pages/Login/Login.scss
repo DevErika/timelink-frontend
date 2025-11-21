@@ -1,0 +1,77 @@
+@use "../../styles/variables" as *;
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+  background-color: $color-background;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: $color-white;
+  padding: 2.5rem;
+  border-radius: $radius-base;
+  box-shadow: $shadow-soft;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.login-title {
+  font-size: $font-h2;
+  font-family: $font-heading;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: $color-dark;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  label {
+    font-weight: 600;
+    color: $color-dark;
+    font-family: $font-body;
+  }
+
+  input {
+    padding: 0.75rem;
+    border-radius: $radius-base;
+    border: 1px solid $color-dark;
+    font-size: $font-small;
+    background: $color-white;
+
+    &:focus {
+      outline: none;
+      border-color: $color-olive;
+      box-shadow: 0 0 0 3px rgba(72,129,101,0.25);
+    }
+  }
+}
+
+.login-button {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  font-size: $font-small;
+  border: none;
+  border-radius: $radius-base;
+  background-color: $color-olive;
+  color: $color-white;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: $font-body;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

@@ -1,6 +1,5 @@
 import "./CommunitySection.scss";
-import communityImage from "../../assets/images/Vecinos-conversando.png"; 
-// Cambia el nombre a la imagen real que tú tengas en assets/images
+import communityImage from "../../assets/images/Vecinos-conversando.png";
 
 export default function CommunitySection() {
   const highlights = [
@@ -20,16 +19,14 @@ export default function CommunitySection() {
 
   return (
     <section className="community-section">
-      {/* Columna izquierda: imagen */}
       <div className="community-image-wrapper">
         <img
           src={communityImage}
-          alt="Community members helping each other"
+          alt="Community members talking together"
           className="community-image"
         />
       </div>
 
-      {/* Columna derecha: contenido */}
       <div className="community-content">
         <h2 className="community-title">A Stronger Community</h2>
 

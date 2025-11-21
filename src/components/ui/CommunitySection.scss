@@ -1,66 +1,83 @@
-@use "/src/styles/variables" as *;
-@use "/src/styles/mixins" as mixins;
+@use "../../styles/variables" as v;
 
 .community-section {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 2rem;
-  padding: 3rem 2rem;
-  background-color: $color-background;
-  border-radius: $radius-base;
-  box-shadow: $shadow-soft;
-  margin-bottom: 3rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: v.$color-background;
+  max-width: 1200px;
+  margin: 0 auto; 
 }
 
 .community-image-wrapper {
-  max-width: 480px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .community-image {
   width: 100%;
-  border-radius: $radius-base;
-  @include mixins.soft-shadow;
-  object-fit: cover;
+  max-width: 450px;
+  border-radius: v.$radius-base;
+  box-shadow: v.$shadow-soft;
 }
 
 .community-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 2rem;
 }
 
 .community-title {
-  font-family: $font-heading;
-  font-size: $font-h2;
-  color: $color-dark;
-  margin-bottom: 1.5rem;
+  font-family: v.$font-heading;
+  font-size: v.$font-h2;
+  color: v.$color-dark;
 }
 
 .community-highlights {
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .community-card {
-  padding: 1rem 1.25rem;
-  border-radius: $radius-base;
-  background-color: $color-mint;
-  @include mixins.soft-shadow;
+  background-color: v.$color-mint;
+  padding: 1.4rem;
+  border-radius: v.$radius-base;
+  box-shadow: v.$shadow-soft;
 }
 
 .community-card-label {
-  font-family: $font-subtitle;
-  font-size: $font-large;
-  color: $color-dark;
-  margin-bottom: 0.5rem;
+  font-family: v.$font-subtitle;
+  font-size: v.$font-large;
+  color: v.$color-dark;
+  margin-bottom: 0.4rem;
 }
 
 .community-card-text {
-  font-family: $font-body;
-  font-size: $font-small;
-  color: $color-dark;
+  font-family: v.$font-body;
+  font-size: v.$font-body-size;
+  color: v.$color-dark;
+}
+
+@media (max-width: 850px) {
+  .community-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .community-image-wrapper {
+    justify-content: center;
+  }
+
+  .community-highlights {
+    align-items: center;
+  }
+
+  .community-card {
+    width: 100%;
+    max-width: 550px;
+  }
 }

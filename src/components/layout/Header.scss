@@ -13,7 +13,7 @@
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  cursor: pointer;
 }
 
 .header-logo {
@@ -25,46 +25,80 @@
   padding: 0.25rem;
 }
 
-/* 
-.header-title {
-  font-family: $font-heading;
-  font-size: $font-h2;
+.header-nav .header-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
-*/
-.header-nav {
-  .header-list {
+
+.header-link {
+  text-decoration: none;
+  color: $color-dark;
+  font-family: $font-subtitle;
+  font-weight: 600;
+  font-size: $font-small;
+  padding: 0.5rem 1rem;
+  border-radius: $radius-base;
+  transition: 0.2s ease;
+
+  &:hover {
+    background-color: $color-peach;
+  }
+
+  &.active {
+    background-color: $color-rose;
+  }
+}
+
+.header-logout-button {
+  @extend .header-link;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.header-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  .burger-bar {
+    width: 25px;
+    height: 3px;
+    background-color: $color-dark;
+    border-radius: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-burger {
     display: flex;
-    gap: 1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
-  .header-link {
-    text-decoration: none;
-    color: $color-dark;
-    font-family: $font-subtitle;
-    font-weight: 600;
-    font-size: $font-small;
-    padding: 0.5rem 1rem;
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    background-color: $color-background;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: $shadow-soft;
     border-radius: $radius-base;
-    transition: background-color 0.2s ease, color 0.2s ease;
-
-    &:hover {
-      background-color: $color-peach;
-      color: $color-dark;
-    }
-
-    &.active {
-      background-color: $color-rose;
-      color: $color-dark;
-    }
+    margin-top: 0.5rem;
   }
-  @media (max-width: 768px) {
-  .header {
-    box-shadow: none;
-  }
-}
 
+  .header-nav.nav-open {
+    display: flex;
+  }
+
+  .header-list {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }

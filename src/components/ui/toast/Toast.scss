@@ -1,37 +1,54 @@
 @use "/src/styles/variables" as *;
-@use "/src/styles/mixins" as *;
 
 .toast {
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  padding: 1rem 1.5rem;
+  min-width: 320px;
+  max-width: 90%;
+  padding: 1.4rem 2rem;
+
   border-radius: $radius-base;
-
-  font-size: $font-small;
+  font-size: $font-medium;
   font-family: $font-body;
+  font-weight: 600;
 
-  color: $color-white;
-  @include soft-shadow;
+  color: $color-dark;
+  background-color: $color-white;
 
-  opacity: 0;
-  transform: translateY(-15px);
-  animation: slideFade 0.4s forwards ease-out;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  z-index: 9999;
 
-  &--success {
-    background-color: $color-olive;
-  }
-
-  &--error {
-    background-color: $color-rose;
-    color: $color-dark;
-  }
+  animation: toast-fade-in-out 3s ease-in-out;
+  text-align: center;
 }
 
-@keyframes slideFade {
-  to {
+.toast--success {
+  border-left: 8px solid $color-olive;
+  background-color: $color-mint;
+}
+
+.toast--error {
+  border-left: 8px solid #b91c1c;
+  background-color: #ffe6e6;
+}
+
+@keyframes toast-fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  10% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -40%);
   }
 }
